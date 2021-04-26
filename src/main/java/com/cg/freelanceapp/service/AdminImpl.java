@@ -7,6 +7,14 @@ import com.cg.freelanceapp.dao.IAdminDao;
 import com.cg.freelanceapp.entities.Admin;
 import com.cg.freelanceapp.exceptions.IdNotFoundException;
 
+
+
+/**
+ * 
+ * @author   Akash Sunil Kumar       
+ * Description: This is a service implementation class for Admin Entity
+ *
+ */
 @Service
 public class AdminImpl implements IAdminService {
 	
@@ -23,7 +31,13 @@ public class AdminImpl implements IAdminService {
 	{
 		if(adminDao.existsById(id))
 		{
-			return adminDao.save(admin);
+			Admin admin2=new Admin();
+			admin2.setFirstName(admin.getFirstName());
+			admin2.setLastName(admin.getLastName());
+			admin2.setPassword(admin.getPassword());
+	
+			return adminDao.save(admin2);
+			
 		}
 		else {
 			throw new IdNotFoundException();
@@ -31,12 +45,17 @@ public class AdminImpl implements IAdminService {
 		
 	}
 	
-	
-	
 	@Override 
 	public Admin findById(Long id)
 	{
-		return adminDao.findById(id).get();
+		if(adminDao.existsById(id))
+		{
+			return adminDao.findById(id).get();
+		}
+		else
+		{
+			throw new IdNotFoundException();
+		}
 		
 	}
 	
