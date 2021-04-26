@@ -38,36 +38,36 @@ public class JobApplication {
 		this.coverLetter = coverLetter;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Job getJob() {
-		return job;
-	}
-
-	public void setJob(Job job) {
-		this.job = job;
-	}
-
 	public LocalDateTime getAppliedDate() {
 		return appliedDate;
-	}
-
-	public void setAppliedDate(LocalDateTime appliedDate) {
-		this.appliedDate = appliedDate;
 	}
 
 	public String getCoverLetter() {
 		return coverLetter;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setAppliedDate(LocalDateTime appliedDate) {
+		this.appliedDate = appliedDate;
+	}
+
 	public void setCoverLetter(String coverLetter) {
 		this.coverLetter = coverLetter;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
 	}
 
 }

@@ -21,6 +21,20 @@ public class AdminImpl implements IAdminService {
 	@Autowired
 	IAdminDao adminDao;
 	
+	@Override 
+	public Admin findById(Long id)
+	{
+		if(adminDao.existsById(id))
+		{
+			return adminDao.findById(id).get();
+		}
+		else
+		{
+			throw new IdNotFoundException();
+		}
+		
+	}
+	
 	public Admin save(Admin admin)
 	{
 		return adminDao.save(admin);
@@ -31,7 +45,7 @@ public class AdminImpl implements IAdminService {
 	{
 		if(adminDao.existsById(id))
 		{
-			Admin admin2=new Admin();
+			Admin admin2=adminDao.findById(id).get();
 			admin2.setFirstName(admin.getFirstName());
 			admin2.setLastName(admin.getLastName());
 			admin2.setPassword(admin.getPassword());
@@ -40,20 +54,6 @@ public class AdminImpl implements IAdminService {
 			
 		}
 		else {
-			throw new IdNotFoundException();
-		}
-		
-	}
-	
-	@Override 
-	public Admin findById(Long id)
-	{
-		if(adminDao.existsById(id))
-		{
-			return adminDao.findById(id).get();
-		}
-		else
-		{
 			throw new IdNotFoundException();
 		}
 		

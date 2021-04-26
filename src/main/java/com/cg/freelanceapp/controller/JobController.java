@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.freelanceapp.dto.JobDTO;
 import com.cg.freelanceapp.entities.Job;
-import com.cg.freelanceapp.entities.Skill;
 import com.cg.freelanceapp.exceptions.InvalidJobException;
 import com.cg.freelanceapp.service.IJobService;
 
@@ -36,22 +35,21 @@ public class JobController {
 	@Autowired
 	IJobService jobService;
 	
-	@ApiOperation(value="post a job")
-	
 	/**
 	 * 
-	 * @param        jobDto
-	 * @return       Response Entity of Object type
-	 * Description : This method posts a new job.
+	 * @param        job
+	 * @return       Response Entity of String type
+	 * Description : This method closes the job module.
 	 * @PostMapping: Annotation for mapping HTTP POST requests onto specific handler methods.
 	 * 
 	 */
 	
-	@PostMapping("/postJob")
-	public ResponseEntity<Object> job(@RequestBody JobDTO jobDto) {
+	@PostMapping("/close")
+	public String close(@RequestBody Job job) {
 		
-		jobService.postJob(jobDto);
-		return new ResponseEntity<>("Job Successfully", HttpStatus.ACCEPTED);
+		jobService.close(job);
+		return "closed successfully";
+		
 	}
 	
 	
@@ -104,21 +102,22 @@ public class JobController {
 		
 	}
 	
+	@ApiOperation(value="post a job")
+	
 	/**
 	 * 
-	 * @param        job
-	 * @return       Response Entity of String type
-	 * Description : This method closes the job module.
+	 * @param        jobDto
+	 * @return       Response Entity of Object type
+	 * Description : This method posts a new job.
 	 * @PostMapping: Annotation for mapping HTTP POST requests onto specific handler methods.
 	 * 
 	 */
 	
-	@PostMapping("/close")
-	public String close(@RequestBody Job job) {
+	@PostMapping("/postJob")
+	public ResponseEntity<Object> job(@RequestBody JobDTO jobDto) {
 		
-		jobService.close(job);
-		return "closed successfully";
-		
+		jobService.postJob(jobDto);
+		return new ResponseEntity<>("Job Successfully", HttpStatus.ACCEPTED);
 	}
 	
 	

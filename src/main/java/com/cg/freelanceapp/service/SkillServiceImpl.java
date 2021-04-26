@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.cg.freelanceapp.dao.ISkillDao;
 import com.cg.freelanceapp.entities.Skill;
-import com.cg.freelanceapp.service.ISkillService;
 
 @Service
 public class SkillServiceImpl implements ISkillService {
@@ -14,9 +13,8 @@ public class SkillServiceImpl implements ISkillService {
 	ISkillDao skillDao;
 
 	@Override
-	public Skill save(Skill skill) {
-
-		return skillDao.save(skill);
+	public Skill findById(Long id) {
+		return skillDao.findById(id).get();
 	}
 
 	@Override
@@ -25,13 +23,14 @@ public class SkillServiceImpl implements ISkillService {
 	}
 
 	@Override
-	public Skill update(Skill skill) {
+	public Skill save(Skill skill) {
+
 		return skillDao.save(skill);
 	}
 
 	@Override
-	public Skill findById(Long id) {
-		return skillDao.findById(id).get();
+	public Skill update(Skill skill) {
+		return skillDao.save(skill);
 	}
 
 }

@@ -8,12 +8,12 @@ import com.cg.freelanceapp.entities.Skill;
 
 public interface IBookmarkedJobDao {
 
-	BookmarkedJob save(BookmarkedJob job);
-
-	void remove(BookmarkedJob job);
+	List<BookmarkedJob> findBookmarkedJobsBySkill(Skill skill, Freelancer freelancer);
 
 	BookmarkedJob findById(Long id);
 
-	List<BookmarkedJob> findBookmarkedJobsBySkill(Skill skill, Freelancer freelancer);
+	void remove(BookmarkedJob job);
+
+	BookmarkedJob save(BookmarkedJob job);
 	
 }

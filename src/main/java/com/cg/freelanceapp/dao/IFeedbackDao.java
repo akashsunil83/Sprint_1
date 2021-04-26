@@ -7,9 +7,9 @@ import com.cg.freelanceapp.entities.Freelancer;
 
 public interface IFeedbackDao {
 	
-	Feedback save(Feedback feedback);
-	Feedback findById(Long id);
-	Feedback update(Feedback feedback);
 	int averageRating(Freelancer freelancer);
+	Feedback findById(Long id);
 	List<Feedback> findFeedbacksByFreelancer(Freelancer freelancer);
+	Feedback save(Feedback feedback);
+	Feedback update(Feedback feedback);
 }

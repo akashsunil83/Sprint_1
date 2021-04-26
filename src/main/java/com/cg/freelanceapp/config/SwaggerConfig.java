@@ -13,17 +13,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-    @Bean
-    public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cg.freelanceapp"))
-                //.apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-                //.paths(regex("/api.*"))
-                .build()
-                .apiInfo(metaData());
-    }
     private ApiInfo metaData() {
         ApiInfo apiInfo = new ApiInfo(
                 "product",
@@ -34,6 +23,17 @@ public class SwaggerConfig {
                "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
         return apiInfo;
+    }
+    @Bean
+    public Docket productApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cg.freelanceapp"))
+                //.apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                //.paths(regex("/api.*"))
+                .build()
+                .apiInfo(metaData());
     }
 }
 

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class JobPortalController {
 
-	@ExceptionHandler(value = InvalidJobException.class)
-	public ResponseEntity<Object> handleException(InvalidJobException exception) {
+	@ExceptionHandler(value = InvalidAdminException.class)
+	public ResponseEntity<Object> handleException(InvalidAdminException exception) {
 		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
 
@@ -18,13 +18,13 @@ public class JobPortalController {
 		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
 
-	@ExceptionHandler(value = InvalidRecruiterException.class)
-	public ResponseEntity<Object> handleException(InvalidRecruiterException exception) {
+	@ExceptionHandler(value = InvalidJobException.class)
+	public ResponseEntity<Object> handleException(InvalidJobException exception) {
 		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
 	
-	@ExceptionHandler(value = InvalidAdminException.class)
-	public ResponseEntity<Object> handleException(InvalidAdminException exception) {
+	@ExceptionHandler(value = InvalidRecruiterException.class)
+	public ResponseEntity<Object> handleException(InvalidRecruiterException exception) {
 		return new ResponseEntity<>(exception.getLocalizedMessage(), HttpStatus.BAD_REQUEST);
 	}
 }

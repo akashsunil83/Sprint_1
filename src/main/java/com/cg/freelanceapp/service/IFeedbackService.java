@@ -8,9 +8,9 @@ import com.cg.freelanceapp.entities.Recruiter;
 
 public interface IFeedbackService {
 
-	Feedback createFeedback(Recruiter recruiter, Freelancer freelancer, int rating, String review);
-
 	int averageRating(Freelancer freelancer);
+
+	Feedback createFeedback(Recruiter recruiter, Freelancer freelancer, int rating, String review);
 
 	List<Feedback> findFeedbacksByFreelancer(Freelancer freelancer);
 }

@@ -48,44 +48,44 @@ public class Feedback {
 		this.createdFor = createdFor;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getRanges() {
-		return ranges;
-	}
-
-	public void setRanges(Integer ranges) {
-		this.ranges = ranges;
-	}
-
 	public String getComments() {
 		return comments;
-	}
-
-	public void setComment(String comments) {
-		this.comments = comments;
 	}
 
 	public Recruiter getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(Recruiter createdBy) {
-		this.createdBy = createdBy;
-	}
-
 	public Freelancer getCreatedFor() {
 		return createdFor;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public Integer getRanges() {
+		return ranges;
+	}
+
+	public void setComment(String comments) {
+		this.comments = comments;
+	}
+
+	public void setCreatedBy(Recruiter createdBy) {
+		this.createdBy = createdBy;
+	}
+
 	public void setCreatedFor(Freelancer createdFor) {
 		this.createdFor = createdFor;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setRanges(Integer ranges) {
+		this.ranges = ranges;
 	}
 
 }

@@ -4,10 +4,10 @@ import com.cg.freelanceapp.entities.SkillExperience;
 
 public interface ISkillExperienceDao {
 	
+	void remove(SkillExperience experience);
+	
 	SkillExperience save(SkillExperience experience);
 	
 	SkillExperience update(SkillExperience experience);
-	
-	void remove(SkillExperience experience);
 	
 }

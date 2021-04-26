@@ -1,8 +1,13 @@
 package com.cg.freelanceapp.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class JobDTO {
+	@NotNull(message = "freelancerid cant be null")
 	private long freelancerid;
+	@NotNull(message = "skillId cant be null")
 	private long skillId;
+	@NotNull(message = "recruiterid cant be null")
 	private long recruiterId;
 	
 	public JobDTO() {
@@ -20,24 +25,24 @@ public class JobDTO {
 		return freelancerid;
 	}
 
-	public void setFreelancerid(long freelancerid) {
-		this.freelancerid = freelancerid;
+	public long getRecruiterId() {
+		return recruiterId;
 	}
 
 	public long getSkillId() {
 		return skillId;
 	}
 
-	public void setSkillId(long skillId) {
-		this.skillId = skillId;
-	}
-
-	public long getRecruiterId() {
-		return recruiterId;
+	public void setFreelancerid(long freelancerid) {
+		this.freelancerid = freelancerid;
 	}
 
 	public void setRecruiterId(long recruiterId) {
 		this.recruiterId = recruiterId;
+	}
+
+	public void setSkillId(long skillId) {
+		this.skillId = skillId;
 	}
 
 	

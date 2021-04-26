@@ -56,36 +56,36 @@ public class BookmarkedFreelancer implements Serializable{
 		this.bookmarkedBy = bookmarkedBy;
 	}
 
+	public Recruiter getBookmarkedBy() {
+		return bookmarkedBy;
+	}
+
+	public Freelancer getFreelancer() {
+		return freelancer;
+	}
+	
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
 	public Skill getSkill() {
 		return skill;
 	}
-
-	public void setSkill(Skill skill) {
-		this.skill = skill;
-	}
 	
-	public Freelancer getFreelancer() {
-		return freelancer;
+	public void setBookmarkedBy(Recruiter bookmarkedBy) {
+		this.bookmarkedBy = bookmarkedBy;
 	}
 
 	public void setFreelancer(Freelancer freelancer) {
 		this.freelancer = freelancer;
 	}
 
-	public Recruiter getBookmarkedBy() {
-		return bookmarkedBy;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setBookmarkedBy(Recruiter bookmarkedBy) {
-		this.bookmarkedBy = bookmarkedBy;
+	public void setSkill(Skill skill) {
+		this.skill = skill;
 	}
 
 }

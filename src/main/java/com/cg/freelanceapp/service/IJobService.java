@@ -6,17 +6,16 @@ import org.springframework.stereotype.Service;
 
 import com.cg.freelanceapp.dto.JobDTO;
 import com.cg.freelanceapp.entities.Job;
-import com.cg.freelanceapp.entities.Skill;
 
 @Service
 public interface IJobService {
 	
-	Job postJob(JobDTO jobDto);
+	void close(Job job);
 
 	Job findById(Long id);
 	
 	List<Job> findJobsBySkillName(String name);
 	
-	void close(Job job);
+	Job postJob(JobDTO jobDto);
 	
 }

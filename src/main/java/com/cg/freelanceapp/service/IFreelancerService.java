@@ -8,9 +8,9 @@ import com.cg.freelanceapp.entities.Freelancer;
 @Service
 public interface IFreelancerService {
 
+	Freelancer findById(Long id);
+
 	Freelancer save(FreelancerDTO freelancerDto);
 
 	Freelancer update(Freelancer freelancer);
-
-	Freelancer findById(Long id);
 }

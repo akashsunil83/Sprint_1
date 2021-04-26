@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.cg.freelanceapp.dao.IRecruiterDao;
 import com.cg.freelanceapp.dto.RecruiterDTO;
 import com.cg.freelanceapp.entities.Recruiter;
-import com.cg.freelanceapp.service.IRecruiterService;
 
 /**************************************************************************************
  * @author       Akash Sunil Kumar

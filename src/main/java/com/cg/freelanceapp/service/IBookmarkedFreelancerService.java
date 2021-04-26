@@ -13,8 +13,8 @@ public interface IBookmarkedFreelancerService {
 
 	List<BookmarkedFreelancer> findBookmarkedFreelancersBySkill(Skill skill, Recruiter recruiter);
 
-	void removeBookmarkedFreelancer(Freelancer freelancer, Skill skill, Recruiter recruiter);
-
 	BookmarkedFreelancer findById(Long id);
+
+	void removeBookmarkedFreelancer(Freelancer freelancer, Skill skill, Recruiter recruiter);
 
 }

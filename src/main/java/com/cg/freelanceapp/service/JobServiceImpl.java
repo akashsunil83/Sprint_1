@@ -1,6 +1,5 @@
 package com.cg.freelanceapp.service;
 
-import java.util.stream.Collectors;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import com.cg.freelanceapp.dao.IRecruiterDao;
 import com.cg.freelanceapp.dao.ISkillDao;
 import com.cg.freelanceapp.dto.JobDTO;
 import com.cg.freelanceapp.entities.Job;
-import com.cg.freelanceapp.entities.Skill;
 import com.cg.freelanceapp.exceptions.InvalidJobException;
 
 
@@ -39,19 +37,9 @@ public class JobServiceImpl implements IJobService {
 	@Autowired
 	IRecruiterDao recruiterDao;
 	
-	@Override
-	public Job postJob(JobDTO jobdto)
+	public void close(Job job)
 	{
-		Job job=new Job();
-		if (recruiterDao.existsById(jobdto.getRecruiterId()) && 
-				freelancerDao.existsById(jobdto.getFreelancerid())&&
-				skillDao.existsById(jobdto.getSkillId())) {
-			job.setPostedBy(recruiterDao.findById(jobdto.getRecruiterId()).get());
-			job.setAwardedTo(freelancerDao.findById(jobdto.getFreelancerid()).get());
-			job.setSkill(skillDao.findById(jobdto.getSkillId()).get());
-			return jobdao.save(job);
-		} else 
-			throw new InvalidJobException();	
+		close(job);
 	}
 	
 	
@@ -82,9 +70,19 @@ public class JobServiceImpl implements IJobService {
 		}
 			
 	}
-	public void close(Job job)
+	@Override
+	public Job postJob(JobDTO jobdto)
 	{
-		close(job);
+		Job job=new Job();
+		if (recruiterDao.existsById(jobdto.getRecruiterId()) && 
+				freelancerDao.existsById(jobdto.getFreelancerid())&&
+				skillDao.existsById(jobdto.getSkillId())) {
+			job.setPostedBy(recruiterDao.findById(jobdto.getRecruiterId()).get());
+			job.setAwardedTo(freelancerDao.findById(jobdto.getFreelancerid()).get());
+			job.setSkill(skillDao.findById(jobdto.getSkillId()).get());
+			return jobdao.save(job);
+		} else 
+			throw new InvalidJobException();	
 	}
 
 

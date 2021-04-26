@@ -44,36 +44,36 @@ public class BookmarkedJob {
 		this.freelancer = freelancer;
 	}
 
+	public Freelancer getFreelancer() {
+		return freelancer;
+	}
+
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Skill getSkill() {
-		return skill;
-	}
-
-	public void setSkill(Skill skill) {
-		this.skill = skill;
 	}
 
 	public Job getJob() {
 		return job;
 	}
 
-	public void setJob(Job job) {
-		this.job = job;
-	}
-
-	public Freelancer getFreelancer() {
-		return freelancer;
+	public Skill getSkill() {
+		return skill;
 	}
 
 	public void setFreelancer(Freelancer freelancer) {
 		this.freelancer = freelancer;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
+	}
+
+	public void setSkill(Skill skill) {
+		this.skill = skill;
 	}
 
 }

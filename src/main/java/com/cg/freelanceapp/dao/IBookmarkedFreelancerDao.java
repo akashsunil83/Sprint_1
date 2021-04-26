@@ -7,9 +7,9 @@ import com.cg.freelanceapp.entities.Skill;
 
 public interface IBookmarkedFreelancerDao {
 
-	BookmarkedFreelancer save(BookmarkedFreelancer bookmarked);
+	List<BookmarkedFreelancer> findBookmarkedFreelancerBySkill(Skill skill);
 
 	void remove(BookmarkedFreelancer bookmarked);
 
-	List<BookmarkedFreelancer> findBookmarkedFreelancerBySkill(Skill skill);
+	BookmarkedFreelancer save(BookmarkedFreelancer bookmarked);
 }
